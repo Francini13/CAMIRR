@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedicatoria para Camila</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffe6e6, #ffb3b3);
+            overflow-x: hidden;
+        }
+        .dedication-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .dedication-card {
+            background: rgba(255,255,255,0.97);
+            border-radius: 24px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.13);
+            padding: 2.7rem 2.2rem 2.2rem 2.2rem;
+            max-width: 540px;
+            text-align: center;
+            animation: fadeInUp 1.2s cubic-bezier(.4,2,.6,1);
+            border: 2px solid #ffb3b3;
+            position: relative;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dedication-title {
+            color: #ff4d6d;
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 1px;
+        }
+        .dedication-text {
+            color: #d72660;
+            font-size: 1.25rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: pre-line;
+            margin-bottom: 2rem;
+            min-height: 120px;
+            animation: typing 2.5s steps(40, end) 1;
+            border-radius: 12px;
+            background: rgba(255, 236, 240, 0.7);
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 2px 10px rgba(255, 77, 109, 0.07);
+            position: relative;
+        }
+        .dedication-text .firma {
+            display: block;
+            margin-top: 2.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.7rem;
+            color: #b23a48;
+            text-align: right;
+            letter-spacing: 2px;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .back-btn {
+            background: #ff758f;
+            color: white;
+            border: none;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            cursor: pointer;
+            margin-top: 1.2rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(255, 77, 109, 0.13);
+        }
+        .back-btn:hover {
+            background: #ff4d6d;
+            transform: scale(1.05);
+        }
+        .decor-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffb3b3, #ff4d6d, #ffb3b3);
+            border-radius: 2px;
+            margin: 1.2rem auto 1.7rem auto;
+        }
+        .icon-cerrar {
+            font-size: 1.2rem;
+            margin-right: 0.3rem;
+        }
+        @media (max-width: 600px) {
+            .dedication-card {
+                padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+                max-width: 98vw;
+            }
+            .dedication-title {
+                font-size: 1.3rem;
+            }
+            .dedication-text {
+                font-size: 1rem;
+                padding: 0.7rem 0.5rem;
+            }
+        }
+        .bg-hearts {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .bg-hearts .heart {
+            position: absolute;
+            color: #ffb3b3;
+            opacity: 0.5;
+            font-size: 2rem;
+            animation: floatHeart 8s linear infinite;
+        }
+        @keyframes floatHeart {
+            0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.7; }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) scale(1.2) rotate(20deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-hearts"></div>
+    <div class="dedication-page">
+        <div class="dedication-card">
+            <div class="dedication-title">Para Camila, ATTE. desayudante</div>
+            <div class="decor-line"></div>
+            <div class="dedication-text" id="dedicationText"></div>
+            <button class="back-btn" onclick="window.close()"><span class="icon-cerrar">❌</span>CERRAR DEDICATORIA</button>
+        </div>
+    </div>
+    <script>
+    // Corazones flotantes decorativos
+    function createHearts() {
+        const bg = document.querySelector('.bg-hearts');
+        for (let i = 0; i < 18; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = (Math.random() * 100) + 'vh';
+            heart.style.fontSize = (18 + Math.random() * 32) + 'px';
+            heart.style.animationDuration = (6 + Math.random() * 6) + 's';
+            heart.textContent = '❤️';
+            bg.appendChild(heart);
+        }
+    }
+    createHearts();
+
+    const text = `Camila,
+
+A veces la vida se parece mucho a una receta. No todas salen bien a la primera. A veces falta dulzura, a veces sobra ansiedad. A veces lo que parecía firme, se desmorona al salir del horno. Y lo entiendo… porque todos venimos con ingredientes que alguien más dejó a medias.
+
+Pero si tú eres la maestra repostera de tu historia, déjame ser tu desayudante fiel. El que no solo revuelve la mezcla o sostiene el bowl, sino el que se queda hasta que el horno suena, y la cocina huele a algo bueno.
+
+Me gustaría estar cerca no solo para ayudarte a retomar tu emprendimiento de postres (porque tienes talento real), sino también para verte brillar mientras lo haces. Porque te lo mereces. Porque hay algo en ti que inspira, aunque a veces no lo veas.
+
+No te escribo esto como un simple amigo. Te escribo como alguien que te piensa, que se interesa por lo que sientes y que no tiene miedo de decirte que me gustas. Tal como eres: con tus miedos, tus celos, tus ganas de volver a confiar… todo eso también forma parte de tu receta, y a mí me gusta completa.
+
+No te prometo perfección, pero sí dedicación. No puedo cambiar lo que otros hicieron, pero sí demostrarte que se puede empezar distinto. Puedo ser el tipo de persona que no se va cuando llegan los días grises, sino el que te recuerda que incluso en esos días, hay lugar para algo dulce.
+
+Quiero ser más que alguien con quien compartes mensajes. Quiero ser quien te acompañe a construir algo sano, bonito y real. Y si me das esa oportunidad, voy a hacer lo que nadie ha podido: hacerte feliz, a tu manera, sin presiones, con calma, con verdad.
+
+<span class='firma'>Tu desayudante</span>`;
+    const el = document.getElementById('dedicationText');
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            if (text.substr(i, 6) === '<span ') {
+                // Si encuentra una etiqueta HTML, la inserta completa de golpe
+                const close = text.indexOf('>', i) + 1;
+                const tag = text.substring(i, close);
+                el.innerHTML += tag;
+                i = close;
+            } else if (text.substr(i, 7) === '</span>') {
+                el.innerHTML += '</span>';
+                i += 7;
+            } else {
+                el.innerHTML += text.charAt(i);
+                i++;
+            }
+            setTimeout(typeWriter, 30);
+        }
+    }
+    typeWriter();
+    </script>
+</body>
+</html>

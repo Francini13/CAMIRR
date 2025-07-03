@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe6e6, #ffb3b3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.hearts-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.avatar {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 180px;
+    margin-bottom: 1rem;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    object-fit: unset;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    color: #ff4d6d;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    color: #ff758f;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+}
+
+.reasons-container {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reason {
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.5s cubic-bezier(.4,2,.6,1), transform 0.5s cubic-bezier(.4,2,.6,1), box-shadow 0.3s, background 0.3s;
+    pointer-events: none;
+    font-size: 1.35rem;
+}
+
+.reason.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    animation: fadeInUp 0.6s cubic-bezier(.4,2,.6,1);
+}
+
+.reason.hiding {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    animation: fadeOutDown 0.5s cubic-bezier(.4,2,.6,1);
+}
+
+.reasons-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reasons-list .reason {
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.5s cubic-bezier(.4,2,.6,1), transform 0.5s cubic-bezier(.4,2,.6,1), box-shadow 0.3s, background 0.3s;
+    pointer-events: none;
+}
+
+.reasons-list .reason.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    animation: fadeInUp 0.6s cubic-bezier(.4,2,.6,1);
+}
+
+.reasons-list .reason.hiding {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    animation: fadeOutDown 0.5s cubic-bezier(.4,2,.6,1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+}
+
+#confetti-canvas {
+    position: fixed;
+    pointer-events: none;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .button {
+        padding: 0.8rem 1.6rem;
+    }
+}

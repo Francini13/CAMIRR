@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Cami ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hearts-bg"></div>
+    <div class="container">
+        <div class="card">
+            <img src="img/camila.png" alt="Avatar Camila" class="avatar">
+            <h1 class="title">10 razones para que salgas conmigo ❤️</h1>
+            <p class="subtitle">De tu desayudante, Gian 🌹</p>
+            
+            <button id="showReasonsBtn" class="button">VER RAZONES</button>
+            
+            <div id="reasonsContainer" class="reasons-container">
+                <ul id="reasonsList" class="reasons-list"></ul>
+                <button id="nextReasonBtn" class="button next-reason-btn" style="display:none;">SIGUIENTE RAZÓN</button>
+            </div>
+            <button id="showDedicationBtn" class="button dedication-btn" onclick="window.open('dedicatoria.html','_blank')">VER DEDICATORIA</button>
+            <div id="dedication" class="dedication"></div>
+        </div>
+    </div>
+    <canvas id="confetti-canvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
